@@ -1,0 +1,10 @@
+C:\Users\gregoryburenkov\source\repos\CarManagementApp\CarManagementApp\bin\Debug\CarManagementApp.exe.config
+C:\Users\gregoryburenkov\source\repos\CarManagementApp\CarManagementApp\bin\Debug\CarManagementApp.exe
+C:\Users\gregoryburenkov\source\repos\CarManagementApp\CarManagementApp\bin\Debug\CarManagementApp.pdb
+C:\Users\gregoryburenkov\source\repos\CarManagementApp\CarManagementApp\obj\Debug\CarManagementApp.csproj.AssemblyReference.cache
+C:\Users\gregoryburenkov\source\repos\CarManagementApp\CarManagementApp\obj\Debug\CarManagementApp.Form1.resources
+C:\Users\gregoryburenkov\source\repos\CarManagementApp\CarManagementApp\obj\Debug\CarManagementApp.Properties.Resources.resources
+C:\Users\gregoryburenkov\source\repos\CarManagementApp\CarManagementApp\obj\Debug\CarManagementApp.csproj.GenerateResource.cache
+C:\Users\gregoryburenkov\source\repos\CarManagementApp\CarManagementApp\obj\Debug\CarManagementApp.csproj.CoreCompileInputs.cache
+C:\Users\gregoryburenkov\source\repos\CarManagementApp\CarManagementApp\obj\Debug\CarManagementApp.exe
+C:\Users\gregoryburenkov\source\repos\CarManagementApp\CarManagementApp\obj\Debug\CarManagementApp.pdb
