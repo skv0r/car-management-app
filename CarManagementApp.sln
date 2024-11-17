@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 	ProjectSection(SolutionItems) = preProject
 		Car.cs = Car.cs
 		CarPark.cs = CarPark.cs
+		IComponent.cs = IComponent.cs
+		IVehicle.cs = IVehicle.cs
 	EndProjectSection
 EndProject
 Global

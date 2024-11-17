@@ -3,14 +3,14 @@
     partial class Form1
     {
         /// <summary>
-        /// Обязательная переменная конструктора.
+        /// Требуемая переменная для конструктора компонента.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Освободить все используемые ресурсы.
         /// </summary>
-        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        /// <param name="disposing">Истинно, если управляемые ресурсы должны быть удалены; иначе Ложь.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,302 +20,261 @@
             base.Dispose(disposing);
         }
 
-        #region Код, автоматически созданный конструктором форм Windows
+        #region Код, автоматически созданный конструктором Windows Forms
 
-        /// <summary>
-        /// Требуемый метод для поддержки конструктора — не изменяйте 
-        /// содержимое этого метода с помощью редактора кода.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnCreateCar = new System.Windows.Forms.Button();
-            this.btnStartEngine = new System.Windows.Forms.Button();
-            this.btnReplaceWheel = new System.Windows.Forms.Button();
             this.textBoxCarName = new System.Windows.Forms.TextBox();
-            this.listBoxActions = new System.Windows.Forms.ListBox();
-            this.btnRemoveCar = new System.Windows.Forms.Button();
-            this.btnShowCarInfo = new System.Windows.Forms.Button();
-            this.listBoxCars = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxCarPower = new System.Windows.Forms.TextBox();
-            this.btnMoveCar = new System.Windows.Forms.Button();
-            this.btnRefuelCar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxHorsePower = new System.Windows.Forms.TextBox();
             this.textBoxFuelConsumption = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnStopEngine = new System.Windows.Forms.Button();
-            this.labelDistance = new System.Windows.Forms.Label();
             this.textBoxFuelTankCapacity = new System.Windows.Forms.TextBox();
-            this.textBoxRefuelAmount = new System.Windows.Forms.TextBox();
-            this.labelFuelTankCapacity = new System.Windows.Forms.Label();
-            this.labelRefuelAmount = new System.Windows.Forms.Label();
-            this.textBoxMoveDistance = new System.Windows.Forms.TextBox();
+            this.buttonAddCar = new System.Windows.Forms.Button();
+            this.buttonRemoveCar = new System.Windows.Forms.Button();
+            this.listBoxCars = new System.Windows.Forms.ListBox();
+            this.textBoxFuelAmount = new System.Windows.Forms.TextBox();
+            this.textBoxDistance = new System.Windows.Forms.TextBox();
+            this.buttonStartEngine = new System.Windows.Forms.Button();
+            this.buttonStopEngine = new System.Windows.Forms.Button();
+            this.buttonRefuel = new System.Windows.Forms.Button();
+            this.buttonMove = new System.Windows.Forms.Button();
+            this.buttonReplaceWheel = new System.Windows.Forms.Button();
+            this.buttonShowInfo = new System.Windows.Forms.Button();
+            this.listBoxActions = new System.Windows.Forms.ListBox();
+            this.labelCarName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelFuelPerKm = new System.Windows.Forms.Label();
+            this.labelFuel = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(135, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Введите название авто:";
-            // 
-            // btnCreateCar
-            // 
-            this.btnCreateCar.Location = new System.Drawing.Point(3, 4);
-            this.btnCreateCar.Name = "btnCreateCar";
-            this.btnCreateCar.Size = new System.Drawing.Size(126, 46);
-            this.btnCreateCar.TabIndex = 4;
-            this.btnCreateCar.Text = "Создать авто";
-            this.btnCreateCar.UseVisualStyleBackColor = true;
-            this.btnCreateCar.Click += new System.EventHandler(this.btnCreateCar_Click);
-            // 
-            // btnStartEngine
-            // 
-            this.btnStartEngine.Location = new System.Drawing.Point(3, 248);
-            this.btnStartEngine.Name = "btnStartEngine";
-            this.btnStartEngine.Size = new System.Drawing.Size(126, 29);
-            this.btnStartEngine.TabIndex = 5;
-            this.btnStartEngine.Text = "Запустить двигатель";
-            this.btnStartEngine.UseVisualStyleBackColor = true;
-            this.btnStartEngine.Click += new System.EventHandler(this.btnStartEngine_Click);
-            // 
-            // btnReplaceWheel
-            // 
-            this.btnReplaceWheel.Location = new System.Drawing.Point(3, 324);
-            this.btnReplaceWheel.Name = "btnReplaceWheel";
-            this.btnReplaceWheel.Size = new System.Drawing.Size(126, 23);
-            this.btnReplaceWheel.TabIndex = 6;
-            this.btnReplaceWheel.Text = "Заменить колесо";
-            this.btnReplaceWheel.UseVisualStyleBackColor = true;
-            this.btnReplaceWheel.Click += new System.EventHandler(this.btnReplaceWheel_Click);
             // 
             // textBoxCarName
             // 
-            this.textBoxCarName.Location = new System.Drawing.Point(270, 6);
+            this.textBoxCarName.Location = new System.Drawing.Point(177, 12);
             this.textBoxCarName.Name = "textBoxCarName";
-            this.textBoxCarName.Size = new System.Drawing.Size(133, 20);
-            this.textBoxCarName.TabIndex = 7;
+            this.textBoxCarName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCarName.TabIndex = 0;
             // 
-            // listBoxActions
+            // textBoxHorsePower
             // 
-            this.listBoxActions.FormattingEnabled = true;
-            this.listBoxActions.Location = new System.Drawing.Point(190, 222);
-            this.listBoxActions.Name = "listBoxActions";
-            this.listBoxActions.Size = new System.Drawing.Size(172, 160);
-            this.listBoxActions.TabIndex = 8;
+            this.textBoxHorsePower.Location = new System.Drawing.Point(177, 38);
+            this.textBoxHorsePower.Name = "textBoxHorsePower";
+            this.textBoxHorsePower.Size = new System.Drawing.Size(100, 20);
+            this.textBoxHorsePower.TabIndex = 1;
             // 
-            // btnRemoveCar
+            // textBoxFuelConsumption
             // 
-            this.btnRemoveCar.Location = new System.Drawing.Point(3, 56);
-            this.btnRemoveCar.Name = "btnRemoveCar";
-            this.btnRemoveCar.Size = new System.Drawing.Size(126, 46);
-            this.btnRemoveCar.TabIndex = 10;
-            this.btnRemoveCar.Text = "Удалить авто";
-            this.btnRemoveCar.UseVisualStyleBackColor = true;
-            this.btnRemoveCar.Click += new System.EventHandler(this.btnRemoveCar_Click);
+            this.textBoxFuelConsumption.Location = new System.Drawing.Point(177, 64);
+            this.textBoxFuelConsumption.Name = "textBoxFuelConsumption";
+            this.textBoxFuelConsumption.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFuelConsumption.TabIndex = 2;
             // 
-            // btnShowCarInfo
+            // textBoxFuelTankCapacity
             // 
-            this.btnShowCarInfo.Location = new System.Drawing.Point(3, 353);
-            this.btnShowCarInfo.Name = "btnShowCarInfo";
-            this.btnShowCarInfo.Size = new System.Drawing.Size(126, 46);
-            this.btnShowCarInfo.TabIndex = 11;
-            this.btnShowCarInfo.Text = "Показать информацию";
-            this.btnShowCarInfo.UseVisualStyleBackColor = true;
-            this.btnShowCarInfo.Click += new System.EventHandler(this.btnShowCarInfo_Click);
+            this.textBoxFuelTankCapacity.Location = new System.Drawing.Point(177, 90);
+            this.textBoxFuelTankCapacity.Name = "textBoxFuelTankCapacity";
+            this.textBoxFuelTankCapacity.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFuelTankCapacity.TabIndex = 3;
+            // 
+            // buttonAddCar
+            // 
+            this.buttonAddCar.Location = new System.Drawing.Point(177, 116);
+            this.buttonAddCar.Name = "buttonAddCar";
+            this.buttonAddCar.Size = new System.Drawing.Size(100, 23);
+            this.buttonAddCar.TabIndex = 4;
+            this.buttonAddCar.Text = "Создать авто";
+            this.buttonAddCar.UseVisualStyleBackColor = true;
+            this.buttonAddCar.Click += new System.EventHandler(this.buttonAddCar_Click);
+            // 
+            // buttonRemoveCar
+            // 
+            this.buttonRemoveCar.Location = new System.Drawing.Point(177, 145);
+            this.buttonRemoveCar.Name = "buttonRemoveCar";
+            this.buttonRemoveCar.Size = new System.Drawing.Size(100, 23);
+            this.buttonRemoveCar.TabIndex = 5;
+            this.buttonRemoveCar.Text = "Удалить авто";
+            this.buttonRemoveCar.UseVisualStyleBackColor = true;
+            this.buttonRemoveCar.Click += new System.EventHandler(this.buttonRemoveCar_Click);
             // 
             // listBoxCars
             // 
             this.listBoxCars.FormattingEnabled = true;
-            this.listBoxCars.Location = new System.Drawing.Point(3, 108);
+            this.listBoxCars.Location = new System.Drawing.Point(177, 174);
             this.listBoxCars.Name = "listBoxCars";
-            this.listBoxCars.Size = new System.Drawing.Size(126, 121);
-            this.listBoxCars.TabIndex = 12;
+            this.listBoxCars.Size = new System.Drawing.Size(100, 108);
+            this.listBoxCars.TabIndex = 6;
+            // 
+            // textBoxFuelAmount
+            // 
+            this.textBoxFuelAmount.Location = new System.Drawing.Point(391, 12);
+            this.textBoxFuelAmount.Name = "textBoxFuelAmount";
+            this.textBoxFuelAmount.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFuelAmount.TabIndex = 7;
+            // 
+            // textBoxDistance
+            // 
+            this.textBoxDistance.Location = new System.Drawing.Point(391, 41);
+            this.textBoxDistance.Name = "textBoxDistance";
+            this.textBoxDistance.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDistance.TabIndex = 8;
+            // 
+            // buttonStartEngine
+            // 
+            this.buttonStartEngine.Location = new System.Drawing.Point(497, 67);
+            this.buttonStartEngine.Name = "buttonStartEngine";
+            this.buttonStartEngine.Size = new System.Drawing.Size(100, 23);
+            this.buttonStartEngine.TabIndex = 9;
+            this.buttonStartEngine.Text = "Запустить двигатель";
+            this.buttonStartEngine.UseVisualStyleBackColor = true;
+            this.buttonStartEngine.Click += new System.EventHandler(this.buttonStartEngine_Click);
+            // 
+            // buttonStopEngine
+            // 
+            this.buttonStopEngine.Location = new System.Drawing.Point(497, 96);
+            this.buttonStopEngine.Name = "buttonStopEngine";
+            this.buttonStopEngine.Size = new System.Drawing.Size(100, 23);
+            this.buttonStopEngine.TabIndex = 10;
+            this.buttonStopEngine.Text = "Выключить двигатель";
+            this.buttonStopEngine.UseVisualStyleBackColor = true;
+            this.buttonStopEngine.Click += new System.EventHandler(this.buttonStopEngine_Click);
+            // 
+            // buttonRefuel
+            // 
+            this.buttonRefuel.Location = new System.Drawing.Point(497, 9);
+            this.buttonRefuel.Name = "buttonRefuel";
+            this.buttonRefuel.Size = new System.Drawing.Size(100, 23);
+            this.buttonRefuel.TabIndex = 11;
+            this.buttonRefuel.Text = "Заправка";
+            this.buttonRefuel.UseVisualStyleBackColor = true;
+            this.buttonRefuel.Click += new System.EventHandler(this.buttonRefuel_Click);
+            // 
+            // buttonMove
+            // 
+            this.buttonMove.Location = new System.Drawing.Point(497, 38);
+            this.buttonMove.Name = "buttonMove";
+            this.buttonMove.Size = new System.Drawing.Size(100, 23);
+            this.buttonMove.TabIndex = 12;
+            this.buttonMove.Text = "Передвижение";
+            this.buttonMove.UseVisualStyleBackColor = true;
+            this.buttonMove.Click += new System.EventHandler(this.buttonMove_Click);
+            // 
+            // buttonReplaceWheel
+            // 
+            this.buttonReplaceWheel.Location = new System.Drawing.Point(497, 125);
+            this.buttonReplaceWheel.Name = "buttonReplaceWheel";
+            this.buttonReplaceWheel.Size = new System.Drawing.Size(100, 23);
+            this.buttonReplaceWheel.TabIndex = 13;
+            this.buttonReplaceWheel.Text = "Заменить колесо";
+            this.buttonReplaceWheel.UseVisualStyleBackColor = true;
+            this.buttonReplaceWheel.Click += new System.EventHandler(this.buttonReplaceWheel_Click);
+            // 
+            // buttonShowInfo
+            // 
+            this.buttonShowInfo.Location = new System.Drawing.Point(177, 288);
+            this.buttonShowInfo.Name = "buttonShowInfo";
+            this.buttonShowInfo.Size = new System.Drawing.Size(100, 23);
+            this.buttonShowInfo.TabIndex = 14;
+            this.buttonShowInfo.Text = "Показать информацию";
+            this.buttonShowInfo.UseVisualStyleBackColor = true;
+            this.buttonShowInfo.Click += new System.EventHandler(this.buttonShowInfo_Click);
+            // 
+            // listBoxActions
+            // 
+            this.listBoxActions.FormattingEnabled = true;
+            this.listBoxActions.Location = new System.Drawing.Point(283, 64);
+            this.listBoxActions.Name = "listBoxActions";
+            this.listBoxActions.Size = new System.Drawing.Size(208, 251);
+            this.listBoxActions.TabIndex = 15;
+            // 
+            // labelCarName
+            // 
+            this.labelCarName.AutoSize = true;
+            this.labelCarName.Location = new System.Drawing.Point(52, 19);
+            this.labelCarName.Name = "labelCarName";
+            this.labelCarName.Size = new System.Drawing.Size(101, 13);
+            this.labelCarName.TabIndex = 16;
+            this.labelCarName.Text = "Введите имя авто:";
+            this.labelCarName.Click += new System.EventHandler(this.label1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 232);
+            this.label1.Location = new System.Drawing.Point(35, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Выберите действие с авто";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Size = new System.Drawing.Size(136, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Введите мощность  авто:";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // textBoxCarPower
+            // labelFuelPerKm
             // 
-            this.textBoxCarPower.Location = new System.Drawing.Point(270, 32);
-            this.textBoxCarPower.Name = "textBoxCarPower";
-            this.textBoxCarPower.Size = new System.Drawing.Size(133, 20);
-            this.textBoxCarPower.TabIndex = 14;
+            this.labelFuelPerKm.AutoSize = true;
+            this.labelFuelPerKm.Location = new System.Drawing.Point(52, 72);
+            this.labelFuelPerKm.Name = "labelFuelPerKm";
+            this.labelFuelPerKm.Size = new System.Drawing.Size(119, 13);
+            this.labelFuelPerKm.TabIndex = 18;
+            this.labelFuelPerKm.Text = "Введите  расход авто:";
+            this.labelFuelPerKm.Click += new System.EventHandler(this.labelFuelPerKm_Click);
             // 
-            // btnMoveCar
+            // labelFuel
             // 
-            this.btnMoveCar.Location = new System.Drawing.Point(599, 170);
-            this.btnMoveCar.Name = "btnMoveCar";
-            this.btnMoveCar.Size = new System.Drawing.Size(133, 46);
-            this.btnMoveCar.TabIndex = 15;
-            this.btnMoveCar.Text = "Передвижение";
-            this.btnMoveCar.UseVisualStyleBackColor = true;
-            this.btnMoveCar.Click += new System.EventHandler(this.btnMoveCar_Click);
-            // 
-            // btnRefuelCar
-            // 
-            this.btnRefuelCar.Location = new System.Drawing.Point(595, 56);
-            this.btnRefuelCar.Name = "btnRefuelCar";
-            this.btnRefuelCar.Size = new System.Drawing.Size(133, 46);
-            this.btnRefuelCar.TabIndex = 16;
-            this.btnRefuelCar.Text = "Заправка";
-            this.btnRefuelCar.UseVisualStyleBackColor = true;
-            this.btnRefuelCar.Click += new System.EventHandler(this.btnRefuelCar_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(135, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Введите мощность авто:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // textBoxFuelConsumption
-            // 
-            this.textBoxFuelConsumption.Location = new System.Drawing.Point(298, 84);
-            this.textBoxFuelConsumption.Name = "textBoxFuelConsumption";
-            this.textBoxFuelConsumption.Size = new System.Drawing.Size(105, 20);
-            this.textBoxFuelConsumption.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(135, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Введите расход авто на 100км:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // btnStopEngine
-            // 
-            this.btnStopEngine.Location = new System.Drawing.Point(3, 283);
-            this.btnStopEngine.Name = "btnStopEngine";
-            this.btnStopEngine.Size = new System.Drawing.Size(126, 35);
-            this.btnStopEngine.TabIndex = 20;
-            this.btnStopEngine.Text = "Выключить двигатель";
-            this.btnStopEngine.UseVisualStyleBackColor = true;
-            this.btnStopEngine.Click += new System.EventHandler(this.btnStopEngine_Click);
-            // 
-            // labelDistance
-            // 
-            this.labelDistance.AutoSize = true;
-            this.labelDistance.Location = new System.Drawing.Point(595, 125);
-            this.labelDistance.Name = "labelDistance";
-            this.labelDistance.Size = new System.Drawing.Size(137, 13);
-            this.labelDistance.TabIndex = 22;
-            this.labelDistance.Text = "Введите расстояние (км):";
-            // 
-            // textBoxFuelTankCapacity
-            // 
-            this.textBoxFuelTankCapacity.Location = new System.Drawing.Point(270, 58);
-            this.textBoxFuelTankCapacity.Name = "textBoxFuelTankCapacity";
-            this.textBoxFuelTankCapacity.Size = new System.Drawing.Size(133, 20);
-            this.textBoxFuelTankCapacity.TabIndex = 23;
-            // 
-            // textBoxRefuelAmount
-            // 
-            this.textBoxRefuelAmount.Location = new System.Drawing.Point(595, 30);
-            this.textBoxRefuelAmount.Name = "textBoxRefuelAmount";
-            this.textBoxRefuelAmount.Size = new System.Drawing.Size(133, 20);
-            this.textBoxRefuelAmount.TabIndex = 24;
-            // 
-            // labelFuelTankCapacity
-            // 
-            this.labelFuelTankCapacity.AutoSize = true;
-            this.labelFuelTankCapacity.Location = new System.Drawing.Point(135, 61);
-            this.labelFuelTankCapacity.Name = "labelFuelTankCapacity";
-            this.labelFuelTankCapacity.Size = new System.Drawing.Size(133, 13);
-            this.labelFuelTankCapacity.TabIndex = 25;
-            this.labelFuelTankCapacity.Text = "Объем топливного бака:";
-            // 
-            // labelRefuelAmount
-            // 
-            this.labelRefuelAmount.AutoSize = true;
-            this.labelRefuelAmount.Location = new System.Drawing.Point(595, 14);
-            this.labelRefuelAmount.Name = "labelRefuelAmount";
-            this.labelRefuelAmount.Size = new System.Drawing.Size(120, 13);
-            this.labelRefuelAmount.TabIndex = 26;
-            this.labelRefuelAmount.Text = "Количество заправки:";
-            // 
-            // textBoxMoveDistance
-            // 
-            this.textBoxMoveDistance.Location = new System.Drawing.Point(598, 144);
-            this.textBoxMoveDistance.Name = "textBoxMoveDistance";
-            this.textBoxMoveDistance.Size = new System.Drawing.Size(133, 20);
-            this.textBoxMoveDistance.TabIndex = 27;
+            this.labelFuel.AutoSize = true;
+            this.labelFuel.Location = new System.Drawing.Point(52, 97);
+            this.labelFuel.Name = "labelFuel";
+            this.labelFuel.Size = new System.Drawing.Size(102, 13);
+            this.labelFuel.TabIndex = 19;
+            this.labelFuel.Text = "Введите  бак авто:";
+            this.labelFuel.Click += new System.EventHandler(this.labelFuel_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBoxMoveDistance);
-            this.Controls.Add(this.labelDistance);
-            this.Controls.Add(this.btnStopEngine);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxFuelConsumption);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnRefuelCar);
-            this.Controls.Add(this.btnMoveCar);
-            this.Controls.Add(this.textBoxCarPower);
+            this.ClientSize = new System.Drawing.Size(903, 467);
+            this.Controls.Add(this.labelFuel);
+            this.Controls.Add(this.labelFuelPerKm);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBoxCars);
-            this.Controls.Add(this.btnShowCarInfo);
-            this.Controls.Add(this.btnRemoveCar);
+            this.Controls.Add(this.labelCarName);
             this.Controls.Add(this.listBoxActions);
-            this.Controls.Add(this.textBoxCarName);
-            this.Controls.Add(this.btnReplaceWheel);
-            this.Controls.Add(this.btnStartEngine);
-            this.Controls.Add(this.btnCreateCar);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.buttonShowInfo);
+            this.Controls.Add(this.buttonReplaceWheel);
+            this.Controls.Add(this.buttonMove);
+            this.Controls.Add(this.buttonRefuel);
+            this.Controls.Add(this.buttonStopEngine);
+            this.Controls.Add(this.buttonStartEngine);
+            this.Controls.Add(this.textBoxDistance);
+            this.Controls.Add(this.textBoxFuelAmount);
+            this.Controls.Add(this.listBoxCars);
+            this.Controls.Add(this.buttonRemoveCar);
+            this.Controls.Add(this.buttonAddCar);
             this.Controls.Add(this.textBoxFuelTankCapacity);
-            this.Controls.Add(this.textBoxRefuelAmount);
-            this.Controls.Add(this.labelFuelTankCapacity);
-            this.Controls.Add(this.labelRefuelAmount);
+            this.Controls.Add(this.textBoxFuelConsumption);
+            this.Controls.Add(this.textBoxHorsePower);
+            this.Controls.Add(this.textBoxCarName);
             this.Name = "Form1";
             this.Text = "Car Management";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnCreateCar;
-        private System.Windows.Forms.Button btnStartEngine;
-        private System.Windows.Forms.Button btnReplaceWheel;
+
         private System.Windows.Forms.TextBox textBoxCarName;
-        private System.Windows.Forms.ListBox listBoxActions;
-        private System.Windows.Forms.Button btnRemoveCar;
-        private System.Windows.Forms.Button btnShowCarInfo;
-        private System.Windows.Forms.ListBox listBoxCars;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxCarPower;
-        private System.Windows.Forms.Button btnMoveCar;
-        private System.Windows.Forms.Button btnRefuelCar;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxHorsePower;
         private System.Windows.Forms.TextBox textBoxFuelConsumption;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnStopEngine;
-        private System.Windows.Forms.Label labelDistance;
         private System.Windows.Forms.TextBox textBoxFuelTankCapacity;
-        private System.Windows.Forms.TextBox textBoxRefuelAmount;
-        private System.Windows.Forms.Label labelFuelTankCapacity;
-        private System.Windows.Forms.Label labelRefuelAmount;
-        private System.Windows.Forms.TextBox textBoxMoveDistance;
+        private System.Windows.Forms.Button buttonAddCar;
+        private System.Windows.Forms.Button buttonRemoveCar;
+        private System.Windows.Forms.ListBox listBoxCars;
+        private System.Windows.Forms.TextBox textBoxFuelAmount;
+        private System.Windows.Forms.TextBox textBoxDistance;
+        private System.Windows.Forms.Button buttonStartEngine;
+        private System.Windows.Forms.Button buttonStopEngine;
+        private System.Windows.Forms.Button buttonRefuel;
+        private System.Windows.Forms.Button buttonMove;
+        private System.Windows.Forms.Button buttonReplaceWheel;
+        private System.Windows.Forms.Button buttonShowInfo;
+        private System.Windows.Forms.ListBox listBoxActions;
+        private System.Windows.Forms.Label labelCarName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelFuelPerKm;
+        private System.Windows.Forms.Label labelFuel;
     }
 }
