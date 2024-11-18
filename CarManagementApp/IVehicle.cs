@@ -1,9 +1,8 @@
-﻿public interface IVehicle
+﻿namespace CarManagementApp
 {
-    void StartEngine();
-    void StopEngine();
-    void Move(int distance);
-    void Refuel(int amount);
-    void ReplaceBrokenWheel();
-    string GetVehicleInfo();
+    public interface IVehicle
+    {
+        void StartEngine(); // Запуск двигателя
+        void StopEngine(); // Остановка двигателя
+    }
 }

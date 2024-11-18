@@ -1,5 +1,7 @@
-﻿public interface IVehicleComponent
+﻿namespace CarManagementApp
 {
-    string GetInfo();  // Метод для получения информации о компоненте
-    void Repair();     // Метод для ремонта компонента
+    public interface IVehicleComponent
+    {
+        string GetInfo(); // Получить информацию о компоненте
+    }
 }

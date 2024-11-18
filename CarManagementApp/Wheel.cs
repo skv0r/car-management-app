@@ -1,6 +1,12 @@
-﻿public class Wheel
+﻿namespace CarManagementApp
 {
-    public string Condition { get; set; } = "Новое"; // По умолчанию колесо новое
+    public class Wheel
+    {
+        public string Condition { get; set; } = "Нормальное"; // Состояние колеса
 
-    public void Replace() => Condition = "Новое"; // При замене колесо снова новое
+        public void Replace()
+        {
+            Condition = "Нормальное"; // После замены колесо становится нормальным
+        }
+    }
 }

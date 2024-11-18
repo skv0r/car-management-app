@@ -2,8 +2,7 @@
 {
     public interface IComponent
     {
-        void Start();
-        void Stop();
-        string GetInfo();
+        string Condition { get; set; } // Состояние компонента (например, для колеса: целое или сломано)
+        void Replace(); // Метод для замены компонента
     }
 }
