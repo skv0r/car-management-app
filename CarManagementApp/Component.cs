@@ -10,18 +10,19 @@ public abstract class Component
     {
         if (condition != "Новое" && condition != "Сломано")
             throw new ArgumentException("Неверное состояние компонента");
+
         Condition = condition;
 
         if (Condition == "Сломано")
         {
-            OnComponentBroken();  // Срабатывание события о поломке.
+            OnComponentBroken();  // Срабатывание события о поломке, если состояние "Сломано".
         }
     }
 
     // Защитный метод для вызова события
     protected virtual void OnComponentBroken()
     {
-        ComponentBroken?.Invoke(this, EventArgs.Empty);
+        ComponentBroken?.Invoke(this, EventArgs.Empty);  // Вызов события, если оно подписано.
     }
 
     // Событие для поломки компонента

@@ -45,6 +45,7 @@
             this.labelFuelPerKm = new System.Windows.Forms.Label();
             this.labelFuel = new System.Windows.Forms.Label();
             this.checkBoxFastMode = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowDetails = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBoxCarName
@@ -193,7 +194,6 @@
             this.labelCarName.Size = new System.Drawing.Size(101, 13);
             this.labelCarName.TabIndex = 16;
             this.labelCarName.Text = "Введите имя авто:";
-            this.labelCarName.Click += new System.EventHandler(this.label1_Click);
             // 
             // label1
             // 
@@ -203,7 +203,6 @@
             this.label1.Size = new System.Drawing.Size(136, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "Введите мощность  авто:";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // labelFuelPerKm
             // 
@@ -213,7 +212,6 @@
             this.labelFuelPerKm.Size = new System.Drawing.Size(119, 13);
             this.labelFuelPerKm.TabIndex = 18;
             this.labelFuelPerKm.Text = "Введите  расход авто:";
-            this.labelFuelPerKm.Click += new System.EventHandler(this.labelFuelPerKm_Click);
             // 
             // labelFuel
             // 
@@ -223,7 +221,6 @@
             this.labelFuel.Size = new System.Drawing.Size(102, 13);
             this.labelFuel.TabIndex = 19;
             this.labelFuel.Text = "Введите  бак авто:";
-            this.labelFuel.Click += new System.EventHandler(this.labelFuel_Click);
             // 
             // checkBoxFastMode
             // 
@@ -235,9 +232,20 @@
             this.checkBoxFastMode.Text = "Высокая скорость";
             this.checkBoxFastMode.UseVisualStyleBackColor = true;
             // 
+            // checkBoxShowDetails
+            // 
+            this.checkBoxShowDetails.AutoSize = true;
+            this.checkBoxShowDetails.Location = new System.Drawing.Point(95, 292);
+            this.checkBoxShowDetails.Name = "checkBoxShowDetails";
+            this.checkBoxShowDetails.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxShowDetails.TabIndex = 21;
+            this.checkBoxShowDetails.Text = "Подробно";
+            this.checkBoxShowDetails.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(903, 467);
+            this.Controls.Add(this.checkBoxShowDetails);
             this.Controls.Add(this.checkBoxFastMode);
             this.Controls.Add(this.labelFuel);
             this.Controls.Add(this.labelFuelPerKm);
@@ -289,5 +297,6 @@
         private System.Windows.Forms.Label labelFuelPerKm;
         private System.Windows.Forms.Label labelFuel;
         private System.Windows.Forms.CheckBox checkBoxFastMode;
+        private System.Windows.Forms.CheckBox checkBoxShowDetails;
     }
 }

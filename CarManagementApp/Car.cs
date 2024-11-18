@@ -82,7 +82,6 @@ namespace CarManagementApp
             {
                 // Например, при высокой скорости расход топлива снижается на 20%
                 Fuel -= (int)((distance * FuelConsumption) / 100 * 0.8); // Приведение типа к int
-
             }
             else
             {
@@ -104,7 +103,7 @@ namespace CarManagementApp
             }
         }
 
-
+        // Заправка автомобиля
         public void Refuel(int amount)
         {
             if (amount <= 0)
@@ -115,6 +114,7 @@ namespace CarManagementApp
                 Fuel = FuelTankCapacity;
         }
 
+        // Метод для замены сломанного колеса
         public void ReplaceBrokenWheel()
         {
             for (int i = 0; i < Wheels.Length; i++)
@@ -128,40 +128,29 @@ namespace CarManagementApp
             throw new InvalidOperationException("Нет сломанных колес для замены.");
         }
 
-        public string GetCarInfo()
+        // Переопределение метода GetCarInfo с возможностью вывода подробной информации
+        public virtual string GetCarInfo(bool showDetailed = false)
         {
-            return $"Название: {Name}\n" +
-                   $"Мощность двигателя: {Engine.HorsePower} л.с.\n" +
-                   $"Пробег: {Mileage} км\n" +
-                   $"Топливо: {Fuel}/{FuelTankCapacity} л\n" +
-                   $"Расход топлива: {FuelConsumption} л/100 км\n" +
-                   $"Двигатель: {(IsEngineOn ? "Включен" : "Выключен")} ({Engine.Condition})\n" + // Отображение состояния двигателя
-                   $"Колеса: {string.Join(", ", Wheels.Select((w, i) => $"Колесо {i + 1}: {w.Condition}"))}";
-        }
-    }
+            string info = $"Название: {Name}\n" +
+                          $"Мощность двигателя: {Engine.HorsePower} л.с.\n" +
+                          $"Пробег: {Mileage} км\n" +
+                          $"Топливо: {Fuel}/{FuelTankCapacity} л\n" +
+                          $"Расход топлива: {FuelConsumption} л/100 км\n" +
+                          $"Двигатель: {(IsEngineOn ? "Включен" : "Выключен")} ({Engine.Condition})\n" +
+                          $"Колеса: {string.Join(", ", Wheels.Select((w, i) => $"Колесо {i + 1}: {w.Condition}"))}";
 
-    public class Engine : Component
-    {
-        public int HorsePower { get; set; }
-        public bool IsRunning { get; private set; } = false;
+            if (showDetailed)
+            {
+                // Добавление подробной информации
+                info += $"\nОставшийся пробег до поломки двигателя: {1000 - Mileage % 1000} км";
+                for (int i = 0; i < Wheels.Length; i++)
+                {
+                    info += $"\nКолесо {i + 1}: поломок - {Wheels[i].BrokenCount} раз";
+                }
+            }
 
-        public void Start()
-        {
-            if (Condition == "Сломано")
-                throw new InvalidOperationException("Двигатель сломан, его нельзя запустить.");
-            IsRunning = true;
-        }
-
-        public void Stop()
-        {
-            if (Condition == "Сломано")
-                throw new InvalidOperationException("Двигатель сломан, его нельзя остановить.");
-            IsRunning = false;
+            return info;
         }
 
-        public void ChangeCondition(string condition)
-        {
-            Condition = condition;
-        }
     }
 }

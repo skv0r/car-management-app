@@ -179,6 +179,7 @@ namespace CarManagementApp
             }
         }
 
+        // Обработчик кнопки для отображения подробной информации о машине
         private void buttonShowInfo_Click(object sender, EventArgs e)
         {
             try
@@ -187,7 +188,8 @@ namespace CarManagementApp
                 if (selectedCar != null)
                 {
                     Car car = carPark.GetCar(selectedCar);
-                    string info = car.GetCarInfo();
+                    bool showDetails = checkBoxShowDetails.Checked;  // Получаем состояние чекбокса
+                    string info = car.GetCarInfo(showDetails);  // Получаем подробную информацию, если чекбокс выбран
                     MessageBox.Show(info);
                 }
                 else
@@ -197,28 +199,14 @@ namespace CarManagementApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при отображении информации об автомобиле: {ex.Message}");
+                MessageBox.Show($"Ошибка при отображении информации: {ex.Message}");
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void labelFuel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelFuelPerKm_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void label1_Click(object sender, EventArgs e) { }
+        private void labelFuel_Click(object sender, EventArgs e) { }
+        private void label1_Click_1(object sender, EventArgs e) { }
+        private void labelFuelPerKm_Click(object sender, EventArgs e) { }
     }
 }
