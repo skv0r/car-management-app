@@ -2,15 +2,15 @@
 
 public class Wheel : Component
 {
-    public void Repair()
+    public void Replace()
     {
         if (Condition == "Сломано")
         {
-            ChangeCondition("Новое"); // Заменить сломанное колесо на новое
+            ChangeCondition("Новое"); // Заменить на новое состояние
         }
         else
         {
-            throw new InvalidOperationException("Колесо уже в хорошем состоянии.");
+            throw new InvalidOperationException("Колесо не сломано, нет необходимости в замене.");
         }
     }
 }
