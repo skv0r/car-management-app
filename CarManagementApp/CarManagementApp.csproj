@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Car.cs" />
     <Compile Include="CarPark.cs" />
+    <Compile Include="Component.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

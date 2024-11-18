@@ -1,20 +1,20 @@
-﻿namespace CarManagementApp
+﻿using System;
+
+public class Engine : Component
 {
-    public class Engine
+    public int HorsePower { get; set; }
+
+    public void Start()
     {
-        public int HorsePower { get; set; } // Мощность двигателя в лошадиных силах
-        public bool IsRunning { get; private set; } // Статус двигателя (включен/выключен)
+        if (Condition == "Сломано")
+            throw new InvalidOperationException("Двигатель сломан, его нельзя запустить.");
+        // Логика запуска двигателя
+    }
 
-        // Метод для запуска двигателя
-        public void Start()
-        {
-            IsRunning = true;
-        }
-
-        // Метод для остановки двигателя
-        public void Stop()
-        {
-            IsRunning = false;
-        }
+    public void Stop()
+    {
+        if (Condition == "Сломано")
+            throw new InvalidOperationException("Двигатель сломан, его нельзя остановить.");
+        // Логика остановки двигателя
     }
 }

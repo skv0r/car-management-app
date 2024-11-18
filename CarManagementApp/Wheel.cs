@@ -1,12 +1,16 @@
-﻿namespace CarManagementApp
-{
-    public class Wheel
-    {
-        public string Condition { get; set; } = "Нормальное"; // Состояние колеса
+﻿using System;
 
-        public void Replace()
+public class Wheel : Component
+{
+    public void Repair()
+    {
+        if (Condition == "Сломано")
         {
-            Condition = "Нормальное"; // После замены колесо становится нормальным
+            ChangeCondition("Новое"); // Заменить сломанное колесо на новое
+        }
+        else
+        {
+            throw new InvalidOperationException("Колесо уже в хорошем состоянии.");
         }
     }
 }
