@@ -1,40 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CarManagementApp
 {
     public class CarPark
     {
-        private readonly List<Car> cars = new List<Car>();
+        // Список автомобилей в автопарке
+        public List<Car> Cars { get; set; } = new List<Car>();
 
+        // Добавление автомобиля в автопарк
         public void AddCar(Car car)
         {
-            if (cars.Any(c => c.Name == car.Name)) // Проверка на существующий автомобиль с таким именем
-            {
-                throw new InvalidOperationException("Автомобиль с таким именем уже существует!"); // Выбрасываем исключение
-            }
-            cars.Add(car); // Добавляем автомобиль в коллекцию
+            Cars.Add(car); // Добавляем новый объект Car в список Cars
         }
 
+        // Удаление автомобиля из автопарка по имени
         public void RemoveCar(string carName)
         {
-            Car car = cars.FirstOrDefault(c => c.Name == carName);
-            if (car != null)
-                cars.Remove(car);
-            else
-                throw new InvalidOperationException("Автомобиль не найден.");
+            // Ищем машину по имени в списке
+            Car carToRemove = Cars.Find(c => c.Name == carName);
+            if (carToRemove != null)
+            {
+                Cars.Remove(carToRemove); // Удаляем найденный объект Car
+            }
         }
 
+        // Получение автомобиля по имени
         public Car GetCar(string carName)
         {
-            return cars.FirstOrDefault(c => c.Name == carName)
-                   ?? throw new InvalidOperationException("Автомобиль не найден.");
-        }
-
-        public List<string> GetAllCarNames()
-        {
-            return cars.Select(c => c.Name).ToList();
+            // Ищем машину по имени в списке и возвращаем её
+            return Cars.Find(c => c.Name == carName);
         }
     }
 }

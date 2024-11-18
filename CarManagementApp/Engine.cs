@@ -1,11 +1,17 @@
 ﻿using System;
 
+// Класс Engine наследуется от Component и представляет двигатель автомобиля
+// Класс управляет состоянием двигателя (работает/не работает) и его мощностью
 public class Engine : Component
 {
+    // Свойство HorsePower хранит мощность двигателя в лошадиных силах
     public int HorsePower { get; set; }
+
+    // Свойство IsRunning указывает, работает ли двигатель (true - работает, false - не работает)
     public bool IsRunning { get; private set; }
 
-    // Запуск двигателя
+    // Метод Start запускает двигатель, если его состояние не "Сломано"
+    // Если двигатель сломан, выбрасывается исключение
     public void Start()
     {
         if (Condition == "Сломано")
@@ -13,7 +19,8 @@ public class Engine : Component
         IsRunning = true;
     }
 
-    // Остановка двигателя
+    // Метод Stop останавливает двигатель, если его состояние не "Сломано"
+    // Если двигатель сломан, выбрасывается исключение
     public void Stop()
     {
         if (Condition == "Сломано")
@@ -21,15 +28,10 @@ public class Engine : Component
         IsRunning = false;
     }
 
-    // Метод для изменения состояния двигателя
-    public new void ChangeCondition(string condition)
+    // Переопределение метода ChangeCondition для изменения состояния двигателя
+    // Изменяет состояние и вызывает событие поломки, если двигатель стал "Сломан"
+    public void ChangeCondition(string condition)
     {
-        base.ChangeCondition(condition); // Вызов базового метода для изменения состояния компонента
-
-        if (Condition == "Сломано")
-        {
-            // Если двигатель сломан, вызываем событие поломки
-            OnComponentBroken();
-        }
+        Condition = condition;
     }
 }

@@ -1,11 +1,14 @@
-﻿// Component.cs
-using System;
+﻿using System;
 
 public abstract class Component
 {
-    public string Condition { get; protected set; } = "Новое";  // Изначальное состояние компонента.
+    // Абстрактный класс Component, который реализует общие методы и события для всех компонентов автомобиля
+    // Свойство Condition хранит текущее состояние компонента, по умолчанию "Новое"
+    public string Condition { get; protected set; } = "Новое";
 
-    // Метод для изменения состояния компонента
+    // Метод ChangeCondition для изменения состояния компонента
+    // Проверяет, что состояние может быть только "Новое" или "Сломано"
+    // При изменении состояния на "Сломано" вызывает событие поломки компонента
     public void ChangeCondition(string condition)
     {
         if (condition != "Новое" && condition != "Сломано")
@@ -13,18 +16,20 @@ public abstract class Component
 
         Condition = condition;
 
+        // Если состояние компонента "Сломано", генерируем событие поломки
         if (Condition == "Сломано")
         {
-            OnComponentBroken();  // Срабатывание события о поломке, если состояние "Сломано".
+            OnComponentBroken();
         }
     }
 
-    // Защитный метод для вызова события
+    // Защитный метод для вызова события поломки компонента
+    // Срабатывает, если компонент сломался
     protected virtual void OnComponentBroken()
     {
-        ComponentBroken?.Invoke(this, EventArgs.Empty);  // Вызов события, если оно подписано.
+        ComponentBroken?.Invoke(this, EventArgs.Empty);  // Генерация события ComponentBroken
     }
 
-    // Событие для поломки компонента
+    // Событие поломки компонента, которое оповещает об изменении состояния на "Сломано"
     public event EventHandler ComponentBroken;
 }
