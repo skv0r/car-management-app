@@ -1,8 +1,5 @@
-﻿namespace CarManagementApp
+﻿public interface IComponent
 {
-    public interface IComponent
-    {
-        string Condition { get; set; } // Состояние компонента (например, для колеса: целое или сломано)
-        void Replace(); // Метод для замены компонента
-    }
+    string Condition { get; set; }
+    void ChangeCondition(string condition);
 }

@@ -130,8 +130,21 @@ namespace CarManagementApp
                 {
                     Car car = carPark.GetCar(selectedCar);
                     int distance = int.Parse(textBoxDistance.Text);
-                    car.Move(distance);
-                    listBoxActions.Items.Add($"Автомобиль {selectedCar} проехал {distance} км.");
+
+                    // Проверка, выбрал ли пользователь ускоренный режим движения
+                    bool isFast = checkBoxFastMode.Checked; // предположим, что это CheckBox для высокой скорости
+
+                    // Вызов перегруженного метода Move с параметром для высокой скорости
+                    if (isFast)
+                    {
+                        car.Move(distance, true); // Перегруженная версия метода Move с параметром isFast
+                        listBoxActions.Items.Add($"Автомобиль {selectedCar} проехал {distance} км с высокой скоростью.");
+                    }
+                    else
+                    {
+                        car.Move(distance); // Стандартная версия метода Move
+                        listBoxActions.Items.Add($"Автомобиль {selectedCar} проехал {distance} км.");
+                    }
                 }
                 else
                 {

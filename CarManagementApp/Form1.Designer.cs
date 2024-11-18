@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelFuelPerKm = new System.Windows.Forms.Label();
             this.labelFuel = new System.Windows.Forms.Label();
+            this.checkBoxFastMode = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBoxCarName
@@ -224,9 +225,20 @@
             this.labelFuel.Text = "Введите  бак авто:";
             this.labelFuel.Click += new System.EventHandler(this.labelFuel_Click);
             // 
+            // checkBoxFastMode
+            // 
+            this.checkBoxFastMode.AutoSize = true;
+            this.checkBoxFastMode.Location = new System.Drawing.Point(603, 43);
+            this.checkBoxFastMode.Name = "checkBoxFastMode";
+            this.checkBoxFastMode.Size = new System.Drawing.Size(121, 17);
+            this.checkBoxFastMode.TabIndex = 20;
+            this.checkBoxFastMode.Text = "Высокая скорость";
+            this.checkBoxFastMode.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(903, 467);
+            this.Controls.Add(this.checkBoxFastMode);
             this.Controls.Add(this.labelFuel);
             this.Controls.Add(this.labelFuelPerKm);
             this.Controls.Add(this.label1);
@@ -276,5 +288,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelFuelPerKm;
         private System.Windows.Forms.Label labelFuel;
+        private System.Windows.Forms.CheckBox checkBoxFastMode;
     }
 }

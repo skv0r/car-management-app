@@ -1,16 +1,23 @@
 ﻿using System;
 
-public class Wheel : Component
+public class Wheel : IComponent
 {
-    public void Replace()
+    public string Condition { get; set; } = "Новое";  // Состояние колеса
+
+    public void Repair()
     {
-        if (Condition == "Сломано")
+        if (Condition == "Новое")
         {
-            ChangeCondition("Новое"); // Заменить на новое состояние
+            throw new InvalidOperationException("Колесо уже в хорошем состоянии.");
         }
-        else
-        {
-            throw new InvalidOperationException("Колесо не сломано, нет необходимости в замене.");
-        }
+        Condition = "Новое";  // Восстановление колеса в рабочее состояние
+    }
+
+    public void ChangeCondition(string condition)
+    {
+        if (condition != "Новое" && condition != "Сломано")
+            throw new ArgumentException("Неверное состояние компонента");
+
+        Condition = condition;
     }
 }

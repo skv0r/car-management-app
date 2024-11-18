@@ -1,28 +1,29 @@
 ﻿using System;
 
-public class Engine : Component
+public class Engine : IComponent
 {
+    public string Condition { get; set; } = "Новое";  // Установка начального состояния компонента
     public int HorsePower { get; set; }
-    public bool IsRunning { get; private set; } = false;  // добавляем свойство для состояния двигателя
+    public bool IsRunning { get; private set; }
 
     public void Start()
     {
-        if (Condition == "Сломан")
+        if (Condition == "Сломано")
             throw new InvalidOperationException("Двигатель сломан, его нельзя запустить.");
 
-        IsRunning = true; // Двигатель включается
+        IsRunning = true;  // Запускаем двигатель
     }
 
     public void Stop()
     {
-        if (Condition == "Сломан")
+        if (Condition == "Сломано")
             throw new InvalidOperationException("Двигатель сломан, его нельзя остановить.");
 
-        IsRunning = false; // Двигатель выключается
+        IsRunning = false;  // Останавливаем двигатель
     }
 
-    public void ChangeCondition(string newCondition)
+    public void ChangeCondition(string condition)
     {
-        Condition = newCondition;
+        Condition = condition;
     }
 }
