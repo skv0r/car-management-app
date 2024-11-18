@@ -13,6 +13,7 @@ namespace CarManagementApp
         public int Mileage { get; private set; } = 0;
         public int FuelConsumption { get; private set; }
 
+        // Конструктор
         public Car(string name, int horsePower, int fuelConsumption, int fuelTankCapacity)
         {
             Name = name;
@@ -21,16 +22,36 @@ namespace CarManagementApp
             for (int i = 0; i < 4; i++)
             {
                 Wheels[i] = new Wheel();
+                Wheels[i].ComponentBroken += OnComponentBroken; // Подписка на событие поломки колеса
             }
+            Engine.ComponentBroken += OnComponentBroken; // Подписка на событие поломки двигателя
+
             FuelConsumption = fuelConsumption;
             FuelTankCapacity = fuelTankCapacity;
             Fuel = FuelTankCapacity; // Заполняем бак до максимума
         }
 
-        public bool IsEngineOn => Engine.IsRunning; // Проверка состояния двигателя
+        // Проверка состояния двигателя
+        public bool IsEngineOn => Engine.IsRunning;
 
+        // Методы для работы с двигателем
         public void StartEngine() => Engine.Start();
         public void StopEngine() => Engine.Stop();
+
+        // Обработка события поломки компонента (колеса или двигателя)
+        private void OnComponentBroken(object sender, EventArgs e)
+        {
+            if (sender is Engine)
+            {
+                // Сообщение о поломке двигателя
+                Console.WriteLine($"{Name}: Двигатель сломан!");
+            }
+            else if (sender is Wheel wheel)
+            {
+                // Сообщение о поломке колеса
+                Console.WriteLine($"{Name}: Колесо {Array.IndexOf(Wheels, wheel) + 1} сломано!");
+            }
+        }
 
         // Перегрузка метода Move: стандартное движение
         public void Move(int distance)
@@ -140,29 +161,6 @@ namespace CarManagementApp
 
         public void ChangeCondition(string condition)
         {
-            Condition = condition;
-        }
-    }
-
-    public class Wheel : Component
-    {
-        public void Repair()
-        {
-            if (Condition == "Сломано")
-                ChangeCondition("Новое");
-            else
-                throw new InvalidOperationException("Колесо уже в рабочем состоянии.");
-        }
-    }
-
-    public abstract class Component
-    {
-        public string Condition { get; protected set; } = "Новое"; // Убедитесь, что это public
-
-        public void ChangeCondition(string condition)
-        {
-            if (condition != "Новое" && condition != "Сломано")
-                throw new ArgumentException("Неверное состояние компонента");
             Condition = condition;
         }
     }
