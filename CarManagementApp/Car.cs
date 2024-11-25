@@ -6,8 +6,13 @@ namespace CarManagementApp
     // Класс Car представляет автомобиль с его компонентами (двигатель, колеса) и управлением ими
     public class Car
     {
-        // Свойство Name хранит название автомобиля
-        public string Name { get; set; }
+        // Свойство Name хранит название автомобиля с обработкой лишних пробелов
+        private string _name;
+        public string Name
+        {
+            get => _name;
+            set => _name = value?.Trim() ?? throw new ArgumentException("Название не может быть пустым.");
+        }
 
         // Свойство Engine хранит объект двигателя автомобиля
         public Engine Engine { get; set; }
@@ -15,8 +20,18 @@ namespace CarManagementApp
         // Свойство Wheels хранит массив колес автомобиля (массив из 4 колес)
         public Wheel[] Wheels { get; set; }
 
-        // Свойство Fuel хранит текущее количество топлива в автомобиле
-        public int Fuel { get; private set; }
+        // Свойство Fuel хранит текущее количество топлива в автомобиле с проверкой на отрицательные значения
+        private int _fuel;
+        public int Fuel
+        {
+            get => _fuel;
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("Количество топлива не может быть отрицательным.");
+                _fuel = value;
+            }
+        }
 
         // Свойство FuelTankCapacity хранит максимальный объем топливного бака
         public int FuelTankCapacity { get; private set; }
@@ -27,16 +42,43 @@ namespace CarManagementApp
         // Свойство FuelConsumption хранит расход топлива на 100 км
         public int FuelConsumption { get; private set; }
 
+        // Статическое свойство для общего количества колес
+        public static int WheelCount { get; } = 4;
+
+        // Свойство Symbol проверяет регистр символа и преобразует строчные буквы в прописные
+        private char _symbol;
+        public char Symbol
+        {
+            get => _symbol;
+            set => _symbol = char.IsLower(value) ? char.ToUpper(value) : value;
+        }
+
+        // Свойство LastServiceDate хранит дату последнего обслуживания с проверкой на корректность
+        private DateTime _lastServiceDate;
+        public DateTime LastServiceDate
+        {
+            get => _lastServiceDate;
+            set
+            {
+                if (value < DateTime.Now)
+                    throw new ArgumentException("Дата не может быть в прошлом.");
+                _lastServiceDate = value;
+            }
+        }
+
+
         // Конструктор класса Car
         // Инициализирует автомобиль с заданными параметрами: имя, мощность двигателя, расход топлива и объем бака
         public Car(string name, int horsePower, int fuelConsumption, int fuelTankCapacity)
         {
             Name = name;
+
             Engine = new Engine { HorsePower = horsePower };
             Wheels = new Wheel[4]; // Инициализация массива колес
+        
 
             // Инициализация колес и подписка на событие поломки каждого колеса
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < WheelCount; i++)
             {
                 Wheels[i] = new Wheel();
                 Wheels[i].ComponentBroken += OnComponentBroken; // Подписка на событие поломки колеса
