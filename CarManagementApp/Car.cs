@@ -216,14 +216,7 @@ namespace CarManagementApp
                           $"Колеса: {string.Join(", ", Wheels.Select((w, i) => $"Колесо {i + 1}: {w.Condition}"))}";
 
             // Если showDetailed == true, добавляется подробная информация
-            if (showDetailed)
-            {
-                info += $"\nОставшийся пробег до поломки двигателя: {1000 - Mileage % 1000} км";
-                for (int i = 0; i < Wheels.Length; i++)
-                {
-                    info += $"\nКолесо {i + 1}: осталось до поломки {200 - Mileage % 200} км";
-                }
-            }
+           
 
             return info;
         }

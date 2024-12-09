@@ -58,6 +58,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="IComponent.cs" />
+    <Compile Include="Info.cs" />
     <Compile Include="IVehicle.cs" />
     <Compile Include="IVehicleComponent.cs" />
     <Compile Include="Program.cs" />

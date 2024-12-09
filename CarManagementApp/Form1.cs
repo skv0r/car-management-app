@@ -21,28 +21,25 @@ namespace CarManagementApp
         {
             try
             {
-                // Получаем данные из текстовых полей
                 string name = textBoxCarName.Text;
                 int horsePower = int.Parse(textBoxHorsePower.Text);
                 int fuelConsumption = int.Parse(textBoxFuelConsumption.Text);
                 int fuelTankCapacity = int.Parse(textBoxFuelTankCapacity.Text);
 
-                // Создаем новый автомобиль
-                var car = new Car(name, horsePower, fuelConsumption, fuelTankCapacity);
+                // Создаем объект типа Info вместо базового Car
+                var car = new Info(name, horsePower, fuelConsumption, fuelTankCapacity);
 
-                // Добавляем автомобиль в автопарк
                 carPark.AddCar(car);
 
-                // Обновляем интерфейс: добавляем машину в список и выводим действия
                 listBoxCars.Items.Add(name);
                 listBoxActions.Items.Add($"Добавлен автомобиль: {name}");
             }
             catch (Exception ex)
             {
-                // В случае ошибки выводим сообщение
                 MessageBox.Show($"Ошибка при добавлении автомобиля: {ex.Message}");
             }
         }
+
 
         // Обработчик кнопки "Удалить авто"
         // При нажатии удаляет выбранный автомобиль из автопарка
@@ -248,29 +245,46 @@ namespace CarManagementApp
         {
             try
             {
-                // Получаем выбранную машину из списка
+                // Проверяем, был ли выбран автомобиль
                 string selectedCar = listBoxCars.SelectedItem?.ToString();
                 if (selectedCar != null)
                 {
-                    // Получаем объект автомобиля из автопарка
                     Car car = carPark.GetCar(selectedCar);
-                    bool showDetails = checkBoxShowDetails.Checked;  // Получаем состояние чекбокса для подробной информации
 
-                    // Получаем информацию о машине
-                    string info = car.GetCarInfo(showDetails);  // Получаем подробную информацию, если чекбокс выбран
-                    MessageBox.Show(info);  // Показываем информацию о машине
+                    if (car == null)
+                    {
+                        MessageBox.Show("Ошибка: Автомобиль не найден.");
+                        return;
+                    }
+
+                    // Добавляем диагностику типа объекта
+                    if (car is Info infoCar)
+                    {
+                        // Если это объект типа Info, используем метод Info
+                        bool showDetails = checkBoxShowDetails.Checked;
+                        string info = infoCar.GetCarInfo(showDetails);
+                        MessageBox.Show(info);
+                    }
+                    else
+                    {
+                        // В противном случае используем метод базового класса
+                        bool showDetails = checkBoxShowDetails.Checked;
+                        string info = car.GetCarInfo(showDetails);
+                        MessageBox.Show(info);
+                    }
                 }
                 else
                 {
-                    // Если машина не выбрана, выводим предупреждение
                     MessageBox.Show("Выберите автомобиль для отображения информации.");
                 }
             }
             catch (Exception ex)
             {
-                // В случае ошибки выводим сообщение
                 MessageBox.Show($"Ошибка при отображении информации: {ex.Message}");
             }
         }
+
+
+
     }
 }
