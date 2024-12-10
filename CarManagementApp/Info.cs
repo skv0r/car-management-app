@@ -2,7 +2,7 @@
 
 namespace CarManagementApp
 {
-    public class Info : Car
+    public sealed class Info : Car
     {
         // Конструктор для класса Info, который вызывает конструктор базового класса
         public Info(string name, int horsePower, int fuelConsumption, int fuelTankCapacity)
