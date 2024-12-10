@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using CarManagementApp;
 
@@ -284,7 +286,99 @@ namespace CarManagementApp
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        // Обработчик кнопки "Сохранить автопарк"
+        private void buttonSaveCarPark_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Указываем путь к файлу (можно сделать выбор пути через диалоговое окно)
+                string filePath = "CarPark.txt";
+
+                using (var writer = new StreamWriter(filePath))
+                {
+                    // Сохраняем данные о каждом автомобиле в автопарке
+                    foreach (var car in carPark.Cars)
+                    {
+                        writer.WriteLine($"{car.Name};{car.Engine.HorsePower};{car.FuelConsumption};{car.FuelTankCapacity};{car.Fuel};{car.Mileage};{car.Engine.Condition};{string.Join(",", car.Wheels.Select(w => w.Condition))}");
+                    }
+                }
+
+                listBoxActions.Items.Add("Автопарк успешно сохранен.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при сохранении автопарка: {ex.Message}");
+            }
+        }
+
+        // Обработчик кнопки "Загрузить автопарк"
+        private void buttonLoadCarPark_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Указываем путь к файлу
+                string filePath = "CarPark.txt";
+
+                if (!File.Exists(filePath))
+                {
+                    MessageBox.Show("Файл с автопарком не найден.");
+                    return;
+                }
+
+                carPark.Cars.Clear(); // Очищаем текущий автопарк
+                listBoxCars.Items.Clear(); // Очищаем список на форме
+
+                using (var reader = new StreamReader(filePath))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        // Разбираем строку файла
+                        var data = line.Split(';');
+                        string name = data[0];
+                        int horsePower = int.Parse(data[1]);
+                        int fuelConsumption = int.Parse(data[2]);
+                        int fuelTankCapacity = int.Parse(data[3]);
+                        int fuel = int.Parse(data[4]);
+                        int mileage = int.Parse(data[5]);
+                        string engineCondition = data[6];
+                        var wheelConditions = data[7].Split(',');
+
+                        // Создаем новый объект Car
+                        var car = new Car(name, horsePower, fuelConsumption, fuelTankCapacity)
+                        {
+                            Fuel = fuel,
+                            Mileage = mileage
+                        };
+
+                        car.Engine.ChangeCondition(engineCondition);
+
+                        for (int i = 0; i < Car.WheelCount; i++)
+                        {
+                            car.Wheels[i].ChangeCondition(wheelConditions[i]);
+                        }
+
+                        carPark.AddCar(car); // Добавляем машину в автопарк
+                        listBoxCars.Items.Add(name); // Добавляем название в список
+                    }
+                }
+
+                listBoxActions.Items.Add("Автопарк успешно загружен.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при загрузке автопарка: {ex.Message}");
+            }
+        }
+
+        private void buttonLoadCarPark_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

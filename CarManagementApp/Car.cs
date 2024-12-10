@@ -37,7 +37,7 @@ namespace CarManagementApp
         public int FuelTankCapacity { get; private set; }
 
         // Свойство Mileage хранит пробег автомобиля в километрах
-        public int Mileage { get; private set; } = 0;
+        public int Mileage { get; set; } = 0;
 
         // Свойство FuelConsumption хранит расход топлива на 100 км
         public int FuelConsumption { get; private set; }

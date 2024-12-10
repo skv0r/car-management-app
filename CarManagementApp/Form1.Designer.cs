@@ -46,6 +46,8 @@
             this.labelFuel = new System.Windows.Forms.Label();
             this.checkBoxFastMode = new System.Windows.Forms.CheckBox();
             this.checkBoxShowDetails = new System.Windows.Forms.CheckBox();
+            this.buttonSaveCarPark = new System.Windows.Forms.Button();
+            this.buttonLoadCarPark = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxCarName
@@ -242,9 +244,31 @@
             this.checkBoxShowDetails.Text = "Подробно";
             this.checkBoxShowDetails.UseVisualStyleBackColor = true;
             // 
+            // buttonSaveCarPark
+            // 
+            this.buttonSaveCarPark.Location = new System.Drawing.Point(188, 361);
+            this.buttonSaveCarPark.Name = "buttonSaveCarPark";
+            this.buttonSaveCarPark.Size = new System.Drawing.Size(116, 23);
+            this.buttonSaveCarPark.TabIndex = 22;
+            this.buttonSaveCarPark.Text = "сохранить парк";
+            this.buttonSaveCarPark.UseVisualStyleBackColor = true;
+            this.buttonSaveCarPark.Click += new System.EventHandler(this.buttonSaveCarPark_Click);
+            // 
+            // buttonLoadCarPark
+            // 
+            this.buttonLoadCarPark.Location = new System.Drawing.Point(323, 361);
+            this.buttonLoadCarPark.Name = "buttonLoadCarPark";
+            this.buttonLoadCarPark.Size = new System.Drawing.Size(116, 23);
+            this.buttonLoadCarPark.TabIndex = 23;
+            this.buttonLoadCarPark.Text = "загрузить парк";
+            this.buttonLoadCarPark.UseVisualStyleBackColor = true;
+            this.buttonLoadCarPark.Click += new System.EventHandler(this.buttonLoadCarPark_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(903, 467);
+            this.Controls.Add(this.buttonLoadCarPark);
+            this.Controls.Add(this.buttonSaveCarPark);
             this.Controls.Add(this.checkBoxShowDetails);
             this.Controls.Add(this.checkBoxFastMode);
             this.Controls.Add(this.labelFuel);
@@ -298,5 +322,7 @@
         private System.Windows.Forms.Label labelFuel;
         private System.Windows.Forms.CheckBox checkBoxFastMode;
         private System.Windows.Forms.CheckBox checkBoxShowDetails;
+        private System.Windows.Forms.Button buttonSaveCarPark;
+        private System.Windows.Forms.Button buttonLoadCarPark;
     }
 }
